@@ -1,0 +1,1 @@
+jQuery((function(){jQuery("#content").fitVids(),enquire.register("screen and (max-width: 767px)",{match:function(){jQuery("#navTrigger").click((function(n){n.preventDefault(),jQuery(".nav").toggle()}))},unmatch:function(){jQuery(".nav").show()}})}));
