@@ -1,0 +1,641 @@
+/* 
+ _    _                           _   _                __     __             
+| |  | |                         | \ | |               \ \   / /             
+| |__| | __ _ _ __  _ __  _   _  |  \| | _____      __  \ \_/ /__  __ _ _ __ 
+|  __  |/ _` | '_ \| '_ \| | | | | . ` |/ _ \ \ /\ / /   \   / _ \/ _` | '__|
+| |  | | (_| | |_) | |_) | |_| | | |\  |  __/\ V  V /     | |  __/ (_| | |   
+|_|  |_|\__,_| .__/| .__/ \__, | |_| \_|\___| \_/\_/      |_|\___|\__,_|_|   
+             | |   | |     __/ |                                             
+             |_|   |_|    |___/  
+                                                          
+* This site was build by Petr Tichy - Ihatetomatoes.net
+* Want to see more of similar sites, demos and tutorials?
+* Help by spreading the word about Ihatetomatoes blog.
+* Facebook - https://www.facebook.com/ihatetomatoesblog
+* Twitter - https://twitter.com/ihatetomatoes
+* Google+ - https://plus.google.com/u/0/109859280204979591787/about
+* Enjoy the code as much as you've enjoyed the scrolling experience.
+
+* Smart curious developer goes here -> The making of Merry Christmallax - http://ihatetomatoes.net/the-making-of-merry-christmallax
+
+
+ * HTML5 Boilerplate
+ *
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+body {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+ */
+
+img {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Chrome Frame prompt
+   ========================================================================== */
+
+.chromeframe {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Parallax Scroll
+   ========================================================================== */
+
+#carbonads-container {
+	display: none;
+}
+
+/* Awards ribbons */
+.opl {
+position:fixed;
+top:236px;
+left:0px;
+z-index:99999;
+}
+.opl a {
+width:73px;
+height:56px;
+text-indent:-9999px;
+display:block;
+background:url('../images/one-page-love-award-left.png') no-repeat;
+}
+
+.csswinner{
+position:fixed;
+top:177px;
+left:0px;
+z-index:999;
+}
+.csswinner a{
+/*width:81px;
+height:59px;*/
+width:73px;
+height:56px;
+text-indent:-9000px;
+display:block;
+background:url('../images/nominee-black-left.png') no-repeat;
+background-size: 67px auto;
+}
+
+
+.cssda{
+position:fixed;
+top:40px;
+left:0px;
+z-index:999;
+}
+.cssda a{
+/*width:81px;
+height:59px;*/
+width:66px;
+height:117px;
+text-indent:-9000px;
+display:block;
+background:url('../images/wotd-mauve-left.png') no-repeat;
+}
+
+
+body, html {
+	height: 100%;
+	min-height: 100%;
+	background-color: #fff;
+}
+body {
+	
+}
+.no-js {
+	padding-top: 106px;
+}
+h2 {
+	margin-top: 0;
+}
+.loading {
+	background: url('../images/ico_loading.gif') no-repeat center center;
+}
+section {
+	opacity: 0;
+}
+.loaded section,
+.no-js section {
+	opacity: 1;
+	-webkit-transition: opacity 300ms ease-out;
+	-moz-transition: opacity 300ms ease-out;
+	transition: opacity 300ms ease-out;
+}
+main {
+	overflow-x: hidden;
+}
+#preload {
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+
+#slide-1,
+#slide-2 {display: none;}
+
+
+/* Backup slide */
+#slide-backup {display: block; text-align: center; background: url('../images/bcg_room.png') repeat-x center center; color: #fff; height: 100%; width: 100%; position: absolute; top: 0; left: 0;}
+#slide-backup .inside {max-width: 80%; margin: 0 auto; padding-top: 80px;}
+#slide-backup img {width: auto; max-width: 100%;}
+p.copyright {
+	color: rgba(255,255,255,0.5);
+	font-size: 14px;
+	line-height: 21px;
+	margin-top: 70px;
+}
+p.copyright a {
+	color: rgba(255,255,255,0.5);
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Image replacement
+ */
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    /* IE 6/7 fallback */
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+}
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 480px) {
+	
+	#carbonads-container {
+		display: block;
+	}
+
+	section {
+		min-width: 480px;
+	}
+	.section-wrapper {
+		width: 100%;
+		height: 100%;
+		position: relative;
+		overflow: hidden;
+	}
+	main {
+		overflow-x: hidden;
+	}
+
+	.bcg {
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-size: cover;
+		height: 100%;
+		width: 100%;
+	}
+
+	/* Slide 1 - Sketched background */
+	#slide-1 {display: block; }
+	#slide-1 .bcg {background-image:url('../images/bcg_paper.png'); background-size: auto; background-repeat: repeat; background-position: center top;}
+	#scrollBaby {
+		background: url('../images/img_get-scrolling.png') no-repeat top left;;
+		width: 184px; height: 286px;
+		position: fixed;
+		bottom: 0;
+		left: 50%;
+		margin-left: -92px;
+	}
+	#slide-1 #tree {
+		width: 380px; height: 550px;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		margin: -275px 0 0 -190px;
+	}
+	#slide-1 .item {position: absolute; top: 0; left: 0;}
+	#slide-1 .tree1 {bottom: 426px; left: 100px; top: auto;}
+	#slide-1 .tree2 {bottom: 309px; left: 73px; top: auto;}
+	#slide-1 .tree3 {bottom: 205px; left: 30px; top: auto;}
+	#slide-1 .tree4 {bottom: 101px; left: 14px; top: auto;}
+	#slide-1 .trunk {bottom: 87px; left: 167px; top: auto;}
+	#slide-1 .pot {bottom: 20px; left: 130px; top: auto;}
+	#slide-1 .shadow {bottom: 0; left: 24px; top: auto;}
+	#vRhythm {position: fixed; top: 50%; left: 50%; margin: -408px 0 0 -306px; width: 574px; height: 749px; opacity: 0;}
+	#goldenRatio {position: fixed; top: 50%; left: 50%; margin: -277px 0 0 -190px; width: 314px; height: 511px; opacity: 0;}
+	.grid {background: url('../images/img_grid.png') repeat-y top center; width: 536px; height: 1px; margin-left: -268px; opacity: 0}
+	#gTop {position: fixed; top: 50%; left: 50%;}
+	#gBot {position: fixed; bottom: 50%; left: 50%;}
+	
+	/* Slide 2 */
+	#slide-2 .bcg {background: none; background-color: #fff; height: 100%; z-index: 1}
+	#slide-2 .bcg2 {background: url('../images/bcg_room.png') repeat-x center center; width: 100%; height: 100%; z-index: 2; position: fixed; top: 0; left: 0;}
+	#slide-2 {display: block; position: relative;}
+	#tree2, #lights {width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 3}
+	#tree2 {
+		background-image: url('../images/img_tree2.png');
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		z-index: 3;
+	}
+	#treeFull {background: url('../images/img_tree-full.png') no-repeat top left; width: 349px; height: 606px; position: fixed; top: 50%; left: 50%; margin: -329px 0 0 -172px; opacity: 0; z-index: 5;}
+	#lights {background: url('../images/img_lights.png') no-repeat fixed center center; opacity: 0;}
+	.bauble {width: 21px; height: 22px; position: fixed; top: 50%; left: 50%; opacity: 0; z-index: 3}
+	.blue {background: url('../images/img_bauble-blue.png') no-repeat top left;}
+	.purple {background: url('../images/img_bauble-purple.png') no-repeat top left;}
+	.red {background: url('../images/img_bauble-red.png') no-repeat top left;}
+	.yellow {background: url('../images/img_bauble-yellow.png') no-repeat top left;}
+	#bauble1 {margin: -160px 0 0 80px;}
+	#bauble2 {margin: -159px 0 0 -100px;}
+	#bauble3 {margin: -210px 0 0 0px;}
+	#bauble4 {margin: -97px 0 0 38px;}
+	#bauble5 {margin: -90px 0 0 -27px;}
+	#bauble6 {margin: -62px 0 0 -119px;}
+	#bauble7 {margin: -30px 0 0 -77px;}
+	#bauble8 {margin: 0px 0 0 78px;}
+	#bauble9 {margin: 41px 0 0 -156px;}
+	#bauble10 {margin: 42px 0 0 135px;}
+	#bauble11 {margin: 110px 0 0 -10px;}
+	#bauble12 {margin: 105px 0 0 90px;}
+	#bauble13 {margin: 168px 0 0 115px;}
+	#bauble14 {margin: 168px 0 0 -128px;}
+	#bauble15 {margin: 145px 0 0 -173px;}
+	
+	.candy {width: 20px; height: 34px; position: fixed; top: 50%; left: 50%; opacity: 1; background: url('../images/img_candy.png') no-repeat top left; z-index: 3}
+	.candyL {background-image: url('../images/img_candyL.png');}
+	#candy1 {margin: -100px 0 0 10px;}
+	#candy2 {margin: -205px 0 0 -30px;}
+	#candy3 {margin: 3px 0 0 21px;}
+	#candy4 {margin: 81px 0 0 -93px}
+	
+	#star {
+		width: 77px; height: 67px; position: fixed; top: 50%; left: 50%; opacity: 1; background: url('../images/img_star.png') no-repeat top left;
+		margin: -329px 0 0 -37px; z-index: 3
+	}
+	
+	#present1 {
+		width: 40px; height: 78px; position: fixed; top: 50%; left: 50%; opacity: 1; background: url('../images/img_present1.png') no-repeat top left;
+		margin: 191px 0 0 -168px; z-index: 3
+	}
+	#present2 {
+		width: 74px; height: 61px; position: fixed; top: 50%; left: 50%; opacity: 1; background: url('../images/img_present2.png') no-repeat top left;
+		margin: 196px 0 0 -123px; z-index: 3
+	}
+	#present3 {
+		width: 47px; height: 43px; position: fixed; top: 50%; left: 50%; opacity: 1; background: url('../images/img_present3.png') no-repeat top left;
+		margin: 225px 0 0 -30px; z-index: 3
+	}
+	#present4 {
+		width: 60px; height: 88px; position: fixed; top: 50%; left: 50%; opacity: 1; background: url('../images/img_present4.png') no-repeat top left;
+		margin: 189px 0 0 29px; z-index: 4;
+	}
+	#present5 {
+		width: 99px; height: 45px; position: fixed; top: 50%; left: 50%; opacity: 1; background: url('../images/img_present5.png') no-repeat top left;
+		margin: 211px 0 0 78px; z-index: 3;
+	}
+	
+	#firePlace {
+		width: 636px; height: 334px; position: fixed; top: 50%; left: 50%; opacity: 0; background: url('../images/img_fireplace.png') no-repeat top left;
+		margin: -59px 0 0 -224px; z-index: 3
+	}
+	
+	#title {
+		width: 880px; height: 233px; position: fixed; top: 50%; left: 50%; opacity: 0; background: url('../images/img_text.png') no-repeat top left;
+		margin: -276px 0 0 -450px; z-index: 3
+	}
+	#titleMerry {
+		width: 211px; height: 202px; position: fixed; top: 50%; left: 50%; opacity: 0; background: url('../images/img_textMerry.png') no-repeat top left;
+		margin: -245px 0 0 -450px; z-index: 4
+	}
+	#titleChristma,
+	.tc1,
+	.tc2 {
+		width: 192px; height: 91px; position: fixed; top: 50%; left: 50%; opacity: 0; background: url('../images/img_textChristma.png') no-repeat top left;
+		margin: -196px 0 0 -198px; z-index: 4
+	}
+	.tc1 {margin: -207px 0 0 -198px; z-index: 3}
+	.tc2 {margin: -222px 0 0 -198px; z-index: 2}
+	#titleLlax,
+	.tl1,
+	.tl2 {
+		width: 92px; height: 90px; position: fixed; top: 50%; left: 50%; opacity: 0; background: url('../images/img_textLlax.png') no-repeat top left;
+		margin: -226px 0 0 -4px; z-index: 4
+	}
+	.tl1 {margin: -208px 0 0 -4px; z-index: 3}
+	.tl2 {margin: -196px 0 0 -4px; z-index: 2}
+	#titleScrolly {
+		width: 277px; height: 60px; position: fixed; top: 50%; left: 50%; opacity: 0; background: url('../images/img_textScrolly.png') no-repeat top left;
+		margin: -255px 0 0 129px; z-index: 4
+	}
+	#titleNY {
+		width: 300px; height: 74px; position: fixed; top: 50%; left: 50%; opacity: 0; background: url('../images/img_textNY.png') no-repeat top left;
+		margin: -183px 0 0 130px; z-index: 4
+	}
+	#titleLine1 {
+		width: 10px; height: 120px; position: fixed; top: 50%; left: 50%; opacity: 0; background: url('../images/img_textLine1.png') no-repeat top left;
+		margin: -222px 0 0 -223px; z-index: 4
+	}
+	#titleLine2 {
+		width: 10px; height: 119px; position: fixed; top: 50%; left: 50%; opacity: 0; background: url('../images/img_textLine2.png') no-repeat bottom left;
+		margin: -259px 0 0 103px; z-index: 4
+	}
+	#titleLine3 {
+		width: 161px; height: 10px; position: fixed; top: 50%; left: 50%; opacity: 0; background: url('../images/img_textLine3.png') no-repeat top left;
+		margin: -251px 0 0 251px; z-index: 4
+	}
+	.cursor {
+		width: 11px; height: 21px; position: fixed; top: 50%; left: 50%; opacity: 0; background: url('../images/img_textCursor.png') no-repeat top left;
+		 z-index: 4
+	}
+	.cursorP1 {margin: -101px 0 0 -220px;}
+	.cursorP2 {margin: -276px 0 0 106px;}
+	.cursorP3 {margin: -247px 0 0 414px;}
+	
+	.sock,
+	#shareTxt {
+		width: 106px;
+		height: 162px;
+		position: fixed; top: 50%; left: 50%; opacity: 0; z-index: 6
+	}
+	#sockFB {background: url('../images/img_sock-facebook.png') no-repeat top left; margin: -33px 0 0 -104px}
+	#sockTwitter {background: url('../images/img_sock-twitter.png') no-repeat top left; margin: -33px 0 0 35px}
+	#sockGplus {background: url('../images/img_sock-gplus.png') no-repeat top left; margin: -33px 0 0 185px}
+	#shareTxt {width: 223px; height: 108px; background: url('../images/img_share-txt.png') no-repeat top left; margin: 17px 0 0 -385px}
+	.sock a {display: block; text-indent: -9999em; overflow: hidden; width: 100%; height: 100%;}
+	
+	#authorsTxt {position: fixed; bottom: 5px; left: 50%; text-align: center; z-index: 7; color: rgba(255,255,255,0.5); margin-left: -306px; font-size: 13px; width: 820px;}
+	#authorsTxt a {color: rgba(255,255,255,0.5); text-decoration: none;
+		-webkit-transition: color 150ms ease-out;
+		-moz-transition: color 150ms ease-out;
+		transition: color 150ms ease-out;
+	}
+	#authorsTxt p {
+		float: left;
+		margin-right: 10px;
+	}
+	#authorsTxt .fb-like {
+		float: right;
+		margin-top: 11px;
+		margin-right: 10px;
+		height: 20px;
+		overflow-y: hidden;
+	}
+	#authorsTxt .twitter-share-button {
+		float: right;
+		margin-top: 11px;
+	}
+	#authorsTxt a:hover {color: rgba(255,255,255,1);}
+	
+	/* Backup Slide */
+	#slide-backup {display: none;}
+	#slide-backup .inside {padding-top: 150px;}
+	.touch #slide-backup {display: block;}
+	p.copyright {
+		display: none;
+	}
+}
+
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
